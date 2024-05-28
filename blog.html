@@ -13,7 +13,7 @@
   </head>
   <body id="home">
     <header class="hero blog">
-      <div id="navbar" class="navbar">
+      <div id="navbar" class="navbar top">
         <h1 class="logo">
           <span class="text-primary"><i class="fas fa-book-open"></i>Edge</span
           >Ledger
@@ -43,7 +43,7 @@
           </div>
           <div class="column">
             <div class="column-2 bg-light">
-              <h2>Blocg Post One</h2>
+              <h2>Blog Post One</h2>
               <p class="meta">
                 <i class="fas fa-user"></i> Posted by
                 <strong>John Doe</strong> | April 19 2024
@@ -71,7 +71,7 @@
           </div>
           <div class="column">
             <div class="column-2 bg-dark">
-              <h2>Blocg Post Two</h2>
+              <h2>Blog Post Two</h2>
               <p class="meta">
                 <i class="fas fa-user"></i> Posted by
                 <strong>Jane Doe</strong> | April 21 2024
@@ -99,7 +99,7 @@
           </div>
           <div class="column">
             <div class="column-2 bg-light">
-              <h2>Blocg Post Three</h2>
+              <h2>Blog Post Three</h2>
               <p class="meta">
                 <i class="fas fa-user"></i> Posted by
                 <strong>John Doe</strong> | April 23 2024
@@ -129,5 +129,26 @@
       </div>
       <p>Copyright &copy; 2024 - EdgeLedger</p>
     </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+      let scrolled = false;
+
+      window.onscroll = function() {
+        if(window.pageYOffset > 300) {
+          navbar.classList.remove('top');
+          if(!scrolled) {
+            navbar.style.transform = 'translateY(-70px)'
+          }
+          setTimeout(function() {
+            navbar.style.transform = 'translateY(0)';
+            scrolled = true;
+          }, 200)
+        } else {
+          navbbar.classList.add('top');
+          scrolled = false;
+        }
+      }
+    </script>
   </body>
 </html>
